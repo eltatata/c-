@@ -1132,38 +1132,220 @@ siguiente funcion para unos valores dados de  x e y */
 // ---------------------------------------------------------------------------------------
 // 29. NUMERO MAGICO
 
-#include<iostream>
-#include<cstdlib>
-#include<ctime>
+// #include<iostream>
+// #include<cstdlib>
+// #include<ctime>
 
-using namespace std;
+// using namespace std;
 
-int main() {
-    int numUser, numMachine, i = 0;
+// int main() {
+//     int numUser, numMachine, i = 0;
 
-    srand(time(NULL));
+//     srand(time(NULL));
 
-    numMachine = 1 + rand() % (100);
+//     numMachine = 1 + rand() % (100);
 
-    cout<<numMachine<<endl;
+//     cout<<numMachine<<endl;
 
-    while (true) {
-        cout<<"\ndigite un numero: ";cin>>numUser;
+//     while (true) {
+//         cout<<"\ndigite un numero: ";cin>>numUser;
 
-        if (numUser == numMachine) { 
-            cout<<"\n!!Adivinastes el numero!!"<<endl;
-            cout<<"\nNumero de intentos: "<<i;
-            break; 
-        } else if (numUser > numMachine) {
-            cout<<"\nEL numero es menor"<<endl;
-        } else if (numUser < numMachine) {
-            cout<<"\nEL numero es mayor"<<endl;
-        }
+//         if (numUser == numMachine) { 
+//             cout<<"\n!!Adivinastes el numero!!"<<endl;
+//             cout<<"\nNumero de intentos: "<<i;
+//             break; 
+//         } else if (numUser > numMachine) {
+//             cout<<"\nEL numero es menor"<<endl;
+//         } else if (numUser < numMachine) {
+//             cout<<"\nEL numero es mayor"<<endl;
+//         }
 
-        i++;
-    }
+//         i++;
+//     }
     
-    return 0;
-}
+//     return 0;
+// }
 // ---------------------------------------------------------------------------------------
 // 30. CONCEPTO DE ARREGLO UNIDIMENCIONAL
+
+// #include<iostream>
+
+// using namespace std;
+
+// int main() {
+//     int numeros[] = {1, 2, 3, 4, 5};
+//     char letras[] = {'a', 'b', 'c', 'd', 'e'};
+
+//     for (int i = 0; i < 5; i++) {
+//         cout<<numeros[i]<<endl;
+//     }
+
+//     for (int i = 0; i < 5; i++) {
+//         cout<<letras[i]<<endl;
+//     }
+    
+//     return 0;
+// }
+// ---------------------------------------------------------------------------------------
+// 31. SUMA DE ELEMENTOS DE UNA ARREGLO
+
+// #include<iostream>
+
+// using namespace std;
+
+// int main() {
+//     int suma = 0, numeros[] = {1, 2, 3, 4, 5};
+
+//     for (int x : numeros) suma += x;
+
+//     cout<<suma;
+
+//     return 0;
+// }
+
+// 2. multiplicacion de los elementos
+
+// #include<iostream>
+
+// using namespace std;
+
+// int main() {
+//     int suma = 1, numeros[] = {1, 2, 3, 4, 5};
+
+//     for (int x : numeros) suma *= x;
+
+//     cout<<suma;
+
+//     return 0;
+// }
+// ---------------------------------------------------------------------------------------
+// 32. MOSTRAR LOS ELEMENTOS CON SUS INDICES
+
+// #include<iostream>
+
+// using namespace std;
+
+// int main() {
+//     int n, numeros[100];
+
+//     cout<<"Digite el numero de elementos: ";cin>>n;
+
+//     for (int i = 0; i < n; i++) {
+//         cout<<"Digite un numero: ";cin>>numeros[i]; //guardando los elementos
+//     }
+    
+//     for (int i = 0; i < n; i++) {
+//         cout<<i<<" --> "<<numeros[i]<<endl;
+//     }
+    
+//     return 0;
+// }
+
+// 2.mostrar el orden inverso de un array
+
+// #include<iostream>
+
+// using namespace std;
+
+// int main() {
+//     int sizeArray, numeros[] = {1, 2, 3, 4, 5};
+    
+//     sizeArray = sizeof(numeros)/sizeof(*numeros);
+
+//     cout<<"Array original: "<<endl; 
+//     for (int x : numeros) cout<<x<<" ";
+
+//     cout<<"\n\n";
+
+//     cout<<"Array invertido: "<<endl; 
+//     for (int i = sizeArray - 1; i >= 0; i--) {
+//         cout<<numeros[i]<<" ";
+//     }
+
+//     return 0;
+// }
+// ---------------------------------------------------------------------------------------
+// 33. SABER EL NUMERO MAYOR DE UN ARRAY
+
+// #include<iostream>
+
+// using namespace std;
+
+// int main() {
+//     int numeros[100], n, mayor = 0;
+
+//     cout<<"cual es el numero de elementos: ";cin>>n;
+
+//     for (int i = 0; i < n; i++) {
+//         cout<<"digite un numero: ";cin>>numeros[i];
+
+//         if(numeros[i] > mayor) mayor = numeros[i] ;
+//     }
+
+//     cout<<"\nEl mayor numero del array es: "<<mayor;
+
+//     return 0;
+// }
+// ---------------------------------------------------------------------------------------
+// 34. AGREGAR CONTEDNIDO DE DOS ARRAY EN UNO SOLO
+
+// #include<iostream>
+
+// using namespace std;
+
+// int main() {
+//     char array1[] = {'q', 'w', 'e', 'r', 't'};
+//     char array2[] = {'a', 'b', 'c', 'd', 'e'};
+
+//     // longitudes de los 2 primeros arrays
+//     int length1 =sizeof(array1)/sizeof(*array1);
+//     int length2 =sizeof(array2)/sizeof(*array2);
+
+//     char fullArray[length1 + length2];
+
+//     // longitud del 3 array
+//     int length3 =sizeof(fullArray)/sizeof(*fullArray);
+
+//     for (int i = 0; i < length1; i++) {
+//         fullArray[i] = array1[i];
+//     }
+
+//     for (int i = length2; i < length3; i++) {
+//         fullArray[i] = array2[i - 5];
+//     }
+    
+//     for (char letra : fullArray) cout<<letra<<endl; 
+
+//     return 0;
+// }
+
+// 2. copiar los elementos de un array y doblarlos en otro array
+
+// #include<iostream>
+
+// using namespace std;
+
+// int main() {
+//     int nums[] = {1,2,3,4,5,6,7,8,9,10};
+
+//     int sizeNums = sizeof(nums)/sizeof(*nums);
+
+//     int dobleNums[sizeNums];
+
+//     // imprimir el array original
+//     cout<<"array original: [ ";
+//     for (int num : nums) cout<<num<<" ";
+//     cout<<"]";
+
+//     // copiar y multipliccar los elementos en "dobleNums"
+//     for (int i = 0; i < sizeNums; i++) {
+//         dobleNums[i] = nums[i] * 2;
+//     }
+
+//     // imprimir el array doble
+//     cout<<"\n\narray doble: [ ";
+//     for(int numDouble : dobleNums) cout<<numDouble<<" ";
+//     cout<<"]";
+
+//     return 0;
+// }
