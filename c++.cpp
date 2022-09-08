@@ -1106,29 +1106,29 @@ siguiente funcion para unos valores dados de  x e y */
 // ---------------------------------------------------------------------------------------
 // 28. SERIA DE FIBONACCI
 
-// #include<iostream>
-// #include<cmath>
+#include<iostream>
+#include<cmath>
 
-// using namespace std;
+using namespace std;
 
-// int main() {
-//     int n, sum, x = 0, y = 1;
+int main() {
+    int n, sum, x = 0, y = 1;
 
-//     cout<<"cual es el numero de tope: ";cin>>n;
+    cout<<"cual es el numero de tope: ";cin>>n;
 
-//     cout<<"1";
-//     for (int i = 1; i < n; i++) {
-//         sum = x + y;
+    cout<<"1";
+    for (int i = 1; i < n; i++) {
+        sum = x + y;
 
-//         cout<<sum;
+        cout<<sum;
 
-//         x = y;
+        x = y;
 
-//         y = sum; 
-//     }
+        y = sum; 
+    }
     
-//     return 0;
-// }
+    return 0;
+}
 // ---------------------------------------------------------------------------------------
 // 29. NUMERO MAGICO
 
