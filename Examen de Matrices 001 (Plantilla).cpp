@@ -41,6 +41,7 @@ int main() {
 
 	// realizar calculos
 
+	//Punto 1
 	int contador = 0;
 	int proTotal = 0;
 
@@ -52,12 +53,11 @@ int main() {
 			contador++;
 		}
 	}
-	
 
-	//Punto 1
 	cout << "\n1. Producción total en toneladas de todas las frutas : " << proTotal << endl;
 	cout << "1. Producción promedio en toneladas de todas las frutas : " << (float)proTotal/contador << endl;
 
+	//Punto 2
 	contador = 0;
 	proTotal = 0;
 
@@ -71,11 +71,11 @@ int main() {
 			} 
 		}
 	}
-
-	//Punto 2	
+	
 	cout << "\n2. Producción total en toneladas de frutas en columnas impares último trimestre: " << proTotal << endl;
 	cout << "2. Producción promedio en toneladas de frutas en columnas impares último trimestre: " << (float)proTotal/contador << endl;
 
+	//Punto 3
 	int sum0 = 0;
 	int sum7 = 0;
 
@@ -96,11 +96,11 @@ int main() {
 	float prom0 = (float)sum0/12;
 	float prom7 = (float)sum7/12;
 
-	//Punto 3
 	if(prom0 > prom7) cout << "\n3. Es menor la producción promedio de la última fila " << prom7 << " que la de la primera: " << prom0 << endl;
 	else if(prom0 < prom7) cout << "\n3. Es mayor la producción promedio de la última fila " << prom7 << " que la de la primera: " << prom0 << endl;
 	else if(prom0 == prom7) cout << "\n3. Es igual la producción promedio de la última fila " << prom7 << " que la de la primera: " << prom0 << endl;
 	
+	//Punto 4
 	contador = 0;
 	int contEspe = 0;
 
@@ -114,40 +114,40 @@ int main() {
 			}
 		}
 	}
-
-	//Punto 4	
+	
 	cout << "\n4. Cantidad de producciones entre 500 y 2.500 toneladas : " << contEspe << endl;
 	cout << "4. Porcentaje de producciones entre 500 y 2.500 toneladas : " << (float)contEspe * 100/contador << "%" << endl;
 
+	//Punto 5
 	// SOLUCION MALA
 	contador = 0;
 	contEspe = 0;
 
 	for (int f = 0; f < 12; f++)
 	{
-		for (int c = 0; c < 8; c++)
+		for (int c = 1; c < 8; c+=2)
 		{
 			contador++;
-			if (f%2 == 0 && c%2 == 0 && PRODUCCION[f][c]%2 == 1) {
+			if (f%2 == 0 && PRODUCCION[f][c]%2 == 1) {
 				contEspe++;
 			}
 		}
 	}
-
-	//Punto 5	
+	
 	cout << "\n5. Cantidad de producción de frutas impares en posiciones pares  : " << contEspe << endl;
 	cout << "5. Porcentaje de producción de frutas impares en posiciones pares: " << (float)contEspe * 100/contador << "%" << endl;
 	
+	//Punto 6
 	int sumPrin = 0;
 	int sumSec = 0;
 	contador = 0;
  
-	for (int f = 0; f < 12; f++)
+	for (int f = 0; f < 8; f++)
 	{
 		for (int c = 0; c < 8; c++)
 		{
 			if (f == c) sumPrin++;
-			else if ((f + c) == 12 - 1) sumSec++;
+			if ((f + c) == f - 1) sumSec++;
 			contador++;
 		}
 	}
@@ -155,28 +155,133 @@ int main() {
 	cout << (float)sumPrin * 100 / contador<<endl;
 	cout << (float)sumSec * 100 / contador<<endl;
 
-	//Punto 6
 	cout << "\n6. Es mayor/menor/igual el porcentaje de producción frutas de la diagonal principal % que la secundaria %" << endl;
 	
-	//Punto 7	
-	cout << "\n7. Mayor producción en meses impares de frutas pares: " << endl;
-	cout << "7. Coordenadas de la mayor producción. Mes y Fruta " << endl;
 
-	//Punto 8	
-	cout << "\n8. Menor producción múltiplo de 10 : " << endl;
-	cout << "8. Coordenadas de la menor producción. Mes y Fruta " << endl;
+
+	//Punto 7	
+
+	int may = 0;
+	int corf, corc;
+
+	for (int f = 1; f < 12; f+=2)
+	{
+		for (int c = 0; c < 8; c+=2)
+		{
+			if (PRODUCCION[f][c] > may) {
+				may = PRODUCCION[f][c];
+				corf = f;
+				corc = c;
+			}
+		}
+	}
+
+	cout << "\n7. Mayor producción en meses impares de frutas pares: " <<may << endl;
+	cout << "7. Coordenadas de la mayor producción. Mes y Fruta " << corf << " , " << corc << endl;
+
+	//Punto 8
+	int men = 999999;
+	corf = 0;
+	corc = 0;
+
+	for (int f = 0; f < 12; f++)
+	{
+		for (int c = 0; c < 8; c++)
+		{
+			if (PRODUCCION[f][c]%10 == 0 && PRODUCCION[f][c] < men) {
+				men = PRODUCCION[f][c];
+				corf = f;
+				corc = c;
+			}
+		}
+	}
+	
+	cout << "\n8. Menor producción múltiplo de 10 : " << men<< endl;
+	cout << "8. Coordenadas de la menor producción. " << corf << " , " << corc << endl;
 
 	//Punto 9	
-	cout << "\n9. Deferencia entre la mayor y la menor producción es: " << endl;
+	men = 999999;
+	may = 0;
+	for (int f = 0; f < 12; f++)
+	{
+		for (int c = 0; c < 8; c++)
+		{
+			if (PRODUCCION[f][c] < men) {
+				men = PRODUCCION[f][c];
+			} else if (PRODUCCION[f][c] > may) {
+				may = PRODUCCION[f][c];
+			}
+		}
+	}
+
+	cout << "\n9. Deferencia entre la mayor y la menor producción es: " << may - men << endl;
 
 	//Punto 10
 	cout << "\n10. Ingrese producción (en toneladas) a buscar      : " << endl;
 	
 	//Punto 11
-	cout << "\n11. No / Se realizó más producción en la triangular superior que la inferior " << endl;
+	int sumTrinTop = 0;
+	int sumTrinBot = 0;
+
+
+	for (int f = 0; f < 8; f++)
+	{
+		for (int c = 0; c < 8; c++)
+		{
+			if (f < c) {
+				sumTrinTop += PRODUCCION[f][c];
+			} else if (f > c) {
+				sumTrinBot += PRODUCCION[f][c];	
+			}
+		}
+	}
+
+	if(sumTrinTop > sumTrinBot) cout << "\n11. Se realizó más producción en la triangular superior " << sumTrinTop << " que la inferior " << sumTrinBot << endl;
+	else cout << "\n11. No se realizó más producción en la triangular superior " << sumTrinTop << " que la inferior " << sumTrinBot << endl;
 	
 		
 	//Punto 12
+	
 	cout << "\n12. Matriz con producciones duplicadas en orden: " << endl;	
+
+		int COPIA[12][8];
+
+
+	for (int f = 0; f < 12; f++)
+	{
+		for (int c = 0; c < 8; c++)
+		{
+			COPIA[f][c] = PRODUCCION[f][c] * 2;
+		}
+	}
+
+	int aux = 0;
+
+	for(int i=0; i<12; i++)
+    {
+        for(int j=0; j<8; j++)
+        {
+            for(int x=0; x<12;x++)
+            {
+                for(int y=0; y<8; y++)
+                {
+                    if(COPIA[i][j]<COPIA[x][y])
+                    {
+                        aux=COPIA[i][j];
+                        COPIA[i][j]=COPIA[x][y];
+                        COPIA[x][y]=aux;
+                    }
+ 
+                }
+            }
+         }
+    }
+
+	for (int i = 0; i < 12; i++) {
+		for (int j = 0; j < 8; j++) {
+			cout << COPIA[i][j] << "  ";
+		}
+		cout << endl;
+	}
 	return 0;
 }
