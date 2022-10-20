@@ -161,7 +161,7 @@ int main()
 
 	int ** APORTES = new int * [12];
 
-	for (int i = 0; i < 12; i++) APORTES[i] = new int[10];
+	for (int i = 0; i < 12; i++) APORTES[i] = new int[N];
 
     APORTES[0][0]=29007600;		APORTES[0][1]=14202841;		APORTES[0][2]=4294491;		APORTES[0][3]=7943976;		APORTES[0][4]=28189792;		APORTES[0][5]=38817104;		APORTES[0][6]=10681280;		APORTES[0][7]=15601030;		APORTES[0][8]=10284943;		APORTES[0][9]=15742551;
     APORTES[1][0]=3078619;		APORTES[1][1]=31588090;		APORTES[1][2]=28592266;		APORTES[1][3]=3896918;		APORTES[1][4]=6924869;		APORTES[1][5]=15327780;		APORTES[1][6]=18425329;		APORTES[1][7]=8515215;		APORTES[1][8]=7077472;		APORTES[1][9]=27720812;
@@ -177,19 +177,19 @@ int main()
     APORTES[11][0]=36509101;	APORTES[11][1]=23951207;	APORTES[11][2]=35878948;	APORTES[11][3]=6328813;		APORTES[11][4]=17005933;	APORTES[11][5]=19053899;	APORTES[11][6]=33200544;	APORTES[11][7]=7622854;		APORTES[11][8]=26658266;	APORTES[11][9]=26516996;
 
     for (int i = 0; i < 12; i++) {
-		for (int j = 0; j < 10; j++) {
+		for (int j = 0; j < N; j++) {
 			cout << APORTES[i][j] << "  ";
 		}
 		cout << endl;
 	}
 
-    float promEPS[10];
-    int infeEPS[10];
-    int mayEPS[10];
-    int menEPS[10];
-    int supeEPS[10];
+    float promEPS[N];
+    int infeEPS[N];
+    int mayEPS[N];
+    int menEPS[N];
+    int supeEPS[N];
     
-    for (int c = 0; c < 10; c++) {
+    for (int c = 0; c < N; c++) {
         double men = 999999999999999;
         int ac = 0, may = 0, infe = 0, supe = 0;
 		for (int f = 0; f < 12; f++) {
@@ -248,16 +248,16 @@ int main()
 
     cout<<"\n\n";
 
-    float promParMES[10];
-    int totalMulDiezMES[10];
-    int mayMulTresMES[10];
-    int menMulCinMES[10];
-    int lastMES[10];
+    float promParMES[12];
+    int totalMulDiezMES[12];
+    int mayMulTresMES[12];
+    int menMulCinMES[12];
+    int lastMES[12];
 
     for (int f = 0; f < 12; f++) {
         double men = 999999999999999;
         int ac = 0, mulDiez = 0, may = 0, last = 0;
-		for (int c = 0; c < 10; c++) {
+		for (int c = 0; c < N; c++) {
 			if((f + c)%2 == 0) ac += APORTES[f][c];
 
             if(APORTES[f][c]%10 == 0) mulDiez += APORTES[f][c];
