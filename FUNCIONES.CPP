@@ -301,7 +301,7 @@
 //         cout << "Cual es el sexo de la persona: "; cin >> sex;
 
 //         if (sex == "masculino" || sex == "Masculino") cantMen++;
-//         else if (sex == "femenino" || sex == "Femenino") cantWom++; 
+//         else if (sex == "femenino" || sex == "Femenino") cantWom++;
 
 //         cantApt += evaluation(age, nationality, sex);
 //     }
